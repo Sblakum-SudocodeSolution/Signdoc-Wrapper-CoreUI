@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {
-  CardBodyComponent,
   CardComponent,
   CardHeaderComponent,
+  CardBodyComponent,
 } from '@coreui/angular';
 
 @Component({
-  templateUrl: 'colors.component.html',
+  selector: 'app-widgets',
+  templateUrl: './widgets.component.html',
+  styleUrls: ['./widgets.component.scss'],
   imports: [CardComponent, CardHeaderComponent, CardBodyComponent],
 })
-export class ColorsComponent {}
+export class WidgetsComponent {}
