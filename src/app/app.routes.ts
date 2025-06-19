@@ -1,46 +1,13 @@
 import { Routes } from '@angular/router';
+import { authGuard } from '../services/guards/auth.guard';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  {
-    path: '',
-    loadComponent: () =>
-      import('./layout').then((m) => m.DefaultLayoutComponent),
-    data: {
-      title: 'Home',
-    },
-    children: [
-      {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('./views/dashboard/routes').then((m) => m.routes),
-      },
-      {
-        path: 'theme',
-        loadChildren: () =>
-          import('./views/theme/routes').then((m) => m.routes),
-      },
-
-      {
-        path: 'pages',
-        loadChildren: () =>
-          import('./views/pages/routes').then((m) => m.routes),
-      },
-    ],
-  },
   {
     path: 'login',
     loadComponent: () =>
       import('./views/pages/login/login.component').then(
         (m) => m.LoginComponent
       ),
-    data: {
-      title: 'Login Page',
-    },
   },
   {
     path: 'register',
@@ -48,15 +15,58 @@ export const routes: Routes = [
       import('./views/pages/register/register.component').then(
         (m) => m.RegisterComponent
       ),
-    data: {
-      title: 'Register Page',
-    },
   },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./layout').then((m) => m.DefaultLayoutComponent),
+    canActivate: [authGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./views/dashboard/dashboard.component').then(
+            (c) => c.DashboardComponent
+          ),
+      },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./views/document-layout/routes').then(
+            (r) => r.DocumentRoutes
+          ),
+        canActivate: [authGuard],
+      },
+
+      {
+        path: '',
+        loadChildren: () =>
+          import('./views/template-layout/routes').then(
+            (r) => r.TemplateRoutes
+          ),
+        canActivate: [authGuard],
+      },
+      {
+        path: 'contact',
+        loadComponent: () =>
+          import('./views/create-contact/create-contact.component').then(
+            (c) => c.CreateContactComponent
+          ),
+      },
+    ],
+  },
+
   {
     path: '**',
     loadComponent: () =>
       import('./views/pages/page404/page404.component').then(
         (c) => c.Page404Component
       ),
+    canActivate: [authGuard],
   },
 ];

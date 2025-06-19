@@ -26,17 +26,17 @@ export class AppComponent implements OnInit {
   readonly #router = inject(Router);
   readonly #titleService = inject(Title);
 
-  readonly #colorModeService = inject(ColorModeService);
+  // readonly #colorModeService = inject(ColorModeService);
   readonly #iconSetService = inject(IconSetService);
 
   constructor() {
     this.#titleService.setTitle(this.title);
     // iconSet singleton
     this.#iconSetService.icons = { ...iconSubset };
-    this.#colorModeService.localStorageItemName.set(
-      'signdoc-wrapper-ui-theme-default'
-    );
-    this.#colorModeService.eventName.set('ColorSchemeChange');
+    // this.#colorModeService.localStorageItemName.set(
+    //   'signdoc-wrapper-ui-theme-default'
+    // );
+    // this.#colorModeService.eventName.set('ColorSchemeChange');
   }
 
   ngOnInit(): void {
@@ -52,10 +52,10 @@ export class AppComponent implements OnInit {
       .pipe(
         delay(1),
         map((params) => <string>params['theme']?.match(/^[A-Za-z0-9\s]+/)?.[0]),
-        filter((theme) => ['dark', 'light', 'auto'].includes(theme)),
-        tap((theme) => {
-          this.#colorModeService.colorMode.set(theme);
-        }),
+        // filter((theme) => ['dark', 'light', 'auto'].includes(theme)),
+        // tap((theme) => {
+        //   this.#colorModeService.colorMode.set(theme);
+        // }),
         takeUntilDestroyed(this.#destroyRef)
       )
       .subscribe();

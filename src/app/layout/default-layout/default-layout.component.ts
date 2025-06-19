@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgScrollbar } from 'ngx-scrollbar';
-import { IconDirective } from '@coreui/icons-angular';
+// import { IconDirective } from '@coreui/icons-angular';
 import {
   ContainerComponent,
   ShadowOnScrollDirective,
@@ -30,9 +30,9 @@ import { navItems } from './_nav';
     // SidebarToggleDirective,
     // SidebarTogglerDirective,
     // DefaultFooterComponent,
+    // IconDirective,
     ContainerComponent,
     DefaultHeaderComponent,
-    IconDirective,
     NgScrollbar,
     RouterOutlet,
     RouterLink,

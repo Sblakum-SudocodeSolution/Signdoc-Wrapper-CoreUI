@@ -8,47 +8,30 @@ export const navItems: INavData[] = [
   },
   {
     title: true,
-    name: 'Theme',
+    name: 'Documents',
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
+    name: 'Document',
+    url: '/document',
     iconComponent: { name: 'cil-drop' },
   },
   {
-    name: 'Typography',
-    url: '/theme/typography',
-    iconComponent: { name: 'cil-pencil' },
+    name: 'Template',
+    url: '/template',
+    iconComponent: { name: 'cil-drop' },
   },
   {
-    name: 'Components',
+    name: 'Contacts',
     title: true,
   },
 
   {
-    name: 'Widgets',
-    url: '/widgets',
+    name: 'Contact',
+    url: '/contact',
     iconComponent: { name: 'cil-calculator' },
   },
-  {
-    title: true,
-    name: 'Extras',
-  },
-  {
-    name: 'Pages',
-    url: '/login',
-    iconComponent: { name: 'cil-star' },
-    children: [
-      {
-        name: 'Login',
-        url: '/login',
-        icon: 'nav-icon-bullet',
-      },
-      {
-        name: 'Register',
-        url: '/register',
-        icon: 'nav-icon-bullet',
-      },
-    ],
-  },
+  // {
+  //   title: true,
+  //   name: 'Extras',
+  // },
 ];
