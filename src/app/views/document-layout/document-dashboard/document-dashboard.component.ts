@@ -18,15 +18,15 @@ export class DocumentDashboardComponent {
 
   private _httpService = inject(HttpService);
 
-  redirectDocumentRoute() {
+  redirectDocumentRoute(): void {
     this._httpService.navigateByUrl('/document/add-document');
   }
 
-  toggleMenuPopup() {
+  toggleMenuPopup(): void {
     this.isPopupShow = !this.isPopupShow;
   }
 
-  toggleUrlPopup() {
+  toggleUrlPopup(): void {
     this.isPopupShow = false;
     this.isUrlShow = !this.isUrlShow;
   }

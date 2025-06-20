@@ -59,15 +59,15 @@ export class AddRecipientComponent {
     this.recipientForm.set(recipientForm);
   }
 
-  toggleStepActive() {
+  toggleStepActive(): void {
     this.isStepActive = !this.isStepActive;
   }
 
-  backToDocument() {
+  backToDocument(): void {
     this._httpService.navigateByUrl('/documents/add-documents');
   }
 
-  recipientSubmit() {
+  recipientSubmit(): void {
     if (this.recipientForm()?.invalid) {
       this.recipientForm()?.markAllAsTouched();
       alert('Please fill the all required fields');

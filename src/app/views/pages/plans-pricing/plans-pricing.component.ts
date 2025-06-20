@@ -16,11 +16,11 @@ export class PlansPricingComponent {
     this.checkIconsColor();
   }
 
-  redirectToHome() {
+  redirectToHome(): void {
     this._httpService.navigateByUrl('/dashboard');
   }
 
-  checkIconsColor() {
+  checkIconsColor(): void {
     const icon = document.getElementById('card-icons')?.children;
     console.log(icon);
   }

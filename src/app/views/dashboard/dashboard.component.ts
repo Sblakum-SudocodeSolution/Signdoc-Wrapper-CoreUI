@@ -1,9 +1,4 @@
 import { Component, inject } from '@angular/core';
-import {
-  CardBodyComponent,
-  CardComponent,
-  CardHeaderComponent,
-} from '@coreui/angular';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -25,9 +20,6 @@ interface todos {
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss'],
   imports: [
-    CardComponent,
-    CardBodyComponent,
-    CardHeaderComponent,
     TableModule,
     CommonModule,
     InputIcon,
