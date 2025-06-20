@@ -46,7 +46,7 @@ export class DashboardComponent {
   ngOnInit() {}
 
   createPackage() {
-    this._httpService.navigateByUrl('/documents');
+    this._httpService.navigateByUrl('/document');
   }
 
   products: any[] = [

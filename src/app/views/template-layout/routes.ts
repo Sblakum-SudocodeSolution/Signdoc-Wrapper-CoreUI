@@ -14,7 +14,7 @@ export const TemplateRoutes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'template',
+        path: '',
         loadComponent: () =>
           import('./template-dashboard/template-dashboard.component').then(
             (c) => c.TemplateDashboardComponent

@@ -35,7 +35,7 @@ export const routes: Routes = [
           ),
       },
       {
-        path: '',
+        path: 'document',
         loadChildren: () =>
           import('./views/document-layout/routes').then(
             (r) => r.DocumentRoutes
@@ -44,7 +44,7 @@ export const routes: Routes = [
       },
 
       {
-        path: '',
+        path: 'template',
         loadChildren: () =>
           import('./views/template-layout/routes').then(
             (r) => r.TemplateRoutes

@@ -14,10 +14,24 @@ export const DocumentRoutes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'document',
+        path: '',
         loadComponent: () =>
           import('./document-dashboard/document-dashboard.component').then(
             (c) => c.DocumentDashboardComponent
+          ),
+      },
+      {
+        path: 'add-document',
+        loadComponent: () =>
+          import('./add-document/add-document.component').then(
+            (c) => c.AddDocumentComponent
+          ),
+      },
+      {
+        path: 'add-recipient',
+        loadComponent: () =>
+          import('./add-recipient/add-recipient.component').then(
+            (c) => c.AddRecipientComponent
           ),
       },
     ],

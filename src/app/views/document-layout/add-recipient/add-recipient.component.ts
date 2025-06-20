@@ -1,11 +1,81 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { HttpService } from '../../../../services/http/http.service';
 
 @Component({
   selector: 'app-add-recipient',
-  imports: [],
+  imports: [
+    AccordionModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    InputTextModule,
+  ],
   templateUrl: './add-recipient.component.html',
-  styleUrl: './add-recipient.component.scss'
+  styleUrl: './add-recipient.component.scss',
 })
 export class AddRecipientComponent {
+  recipientForm = signal<FormGroup | null>(null);
+  private _formBuilder = inject(FormBuilder);
+  isStepActive: boolean = false;
+  private _httpService = inject(HttpService);
 
+  constructor() {
+    this.initFormGroup();
+  }
+
+  initFormGroup() {
+    const recipientForm = this._formBuilder.group({
+      recipientDetails: this._formBuilder.group({
+        recipientOrder: [''],
+        recipientName: ['', Validators.compose([Validators.required])],
+        recipientEmail: [
+          '',
+          Validators.compose([
+            Validators.required,
+            Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          ]),
+        ],
+      }),
+
+      packageDetails: this._formBuilder.group({
+        packageName: ['', Validators.compose([Validators.required])],
+        packageDescription: [''],
+      }),
+
+      emailNotificationDetails: this._formBuilder.group({
+        emailSubject: ['', Validators.compose([Validators.required])],
+        emailSubjectDescription: [''],
+      }),
+    });
+
+    this.recipientForm.set(recipientForm);
+  }
+
+  toggleStepActive() {
+    this.isStepActive = !this.isStepActive;
+  }
+
+  backToDocument() {
+    this._httpService.navigateByUrl('/documents/add-documents');
+  }
+
+  recipientSubmit() {
+    if (this.recipientForm()?.invalid) {
+      this.recipientForm()?.markAllAsTouched();
+      alert('Please fill the all required fields');
+      return;
+    }
+
+    console.log(this.recipientForm()?.value);
+    this.recipientForm()?.reset();
+    this._httpService.navigateByUrl('/dashboard');
+  }
 }
