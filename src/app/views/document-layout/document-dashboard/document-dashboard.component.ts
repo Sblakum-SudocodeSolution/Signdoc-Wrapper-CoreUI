@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { ContainerComponent } from '@coreui/angular';
 
 @Component({
   selector: 'app-document-dashboard',
-  imports: [],
+  imports: [ContainerComponent],
   templateUrl: './document-dashboard.component.html',
-  styleUrl: './document-dashboard.component.scss'
+  styleUrl: './document-dashboard.component.scss',
 })
-export class DocumentDashboardComponent {
-
-}
+export class DocumentDashboardComponent {}

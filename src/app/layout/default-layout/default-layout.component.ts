@@ -31,7 +31,7 @@ import { navItems } from './_nav';
     // SidebarTogglerDirective,
     // DefaultFooterComponent,
     // IconDirective,
-    ContainerComponent,
+    // ContainerComponent,
     DefaultHeaderComponent,
     NgScrollbar,
     RouterOutlet,

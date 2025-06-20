@@ -35,6 +35,7 @@
   <ng-scrollbar pointerEventsMethod="scrollbar" visibility="hover">
     <c-sidebar-nav [navItems]="navItems" dropdownMode="close" compact />
   </ng-scrollbar>
+  <!-- <button>Logout</button> -->
 </c-sidebar>
 
 <!--main-->
@@ -42,15 +43,15 @@
   <!--app-header-->
   <app-default-header
     [cShadowOnScroll]="'sm'"
-    class="mb-4 d-print-none header header-sticky p-0 shadow-sm"
+    class="d-print-none header header-sticky p-0 shadow-sm"
     position="sticky"
     sidebarId="sidebar1"
   />
   <!--app-body-->
-  <div class="body flex-grow-1">
-    <c-container breakpoint="lg" class="h-auto px-4">
-      <router-outlet />
-    </c-container>
+  <div class="body flex-grow-1 p-4">
+    <!-- <c-container breakpoint="lg" class="p-4 h-100 w-100"> -->
+    <router-outlet />
+    <!-- </c-container> -->
   </div>
   <!--app footer-->
   <!-- <app-default-footer /> -->

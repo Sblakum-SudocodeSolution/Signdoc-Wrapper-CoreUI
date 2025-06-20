@@ -1,4 +1,150 @@
-<c-card>
+<!-- <c-card>
   <c-card-header>Dashboard</c-card-header>
   <c-card-body><h2>Dashboard</h2></c-card-body>
-</c-card>
+</c-card> -->
+
+<div class="dashboard-container my-4">
+  <div
+    class="dashboard-header d-flex align-items-center justify-content-between"
+  >
+    <strong class="dashboard-title">My Dashboard</strong>
+    <button class="btn-package" (click)="createPackage()">
+      <i class="bi bi-plus"></i> Create Packages
+    </button>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-3 col-md-6 mt-3">
+      <div class="h-100 w-100 dashboard-card p-3">
+        <strong class="d-block">175</strong>
+        <div class="d-flex justify-content-between align-items-center">
+          <span>All Documents</span>
+          <i class="bi bi-archive"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mt-3">
+      <div class="h-100 w-100 dashboard-card p-3">
+        <strong class="d-block">105</strong>
+        <div class="d-flex justify-content-between align-items-center">
+          <span>Completed Documents</span>
+          <i class="bi bi-file-earmark-check"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mt-3">
+      <div class="h-100 w-100 dashboard-card p-3">
+        <strong class="d-block">60</strong>
+        <div class="d-flex justify-content-between align-items-center">
+          <span>Pending Documents</span>
+          <i class="bi bi-file-earmark-text"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mt-3">
+      <div class="h-100 w-100 dashboard-card p-3">
+        <strong class="d-block">10</strong>
+        <div class="d-flex justify-content-between align-items-center">
+          <span>Rejected Documents</span>
+          <i class="bi bi-file-earmark-excel"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <form class="d-flex gap-5">
+        <div class="search-box w-100">
+          <p-iconfield class="search-bar">
+            <p-inputicon styleClass="pi pi-search" />
+            <input
+              type="text"
+              class="w-100"
+              pInputText
+              placeholder="Type to search"
+            />
+          </p-iconfield>
+        </div>
+        <div
+          class="filter-box d-flex align-items-center px-3 rounded gap-3 border"
+        >
+          <select class="filter-select border-0 border-end">
+            <option value="" selected disabled>Status</option>
+            <option value="1">By name</option>
+            <option value="2">By Date</option>
+            <option value="3">By status</option>
+          </select>
+
+          <button class="border-0"><i class="bi bi-sort-down"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card overflow-hidden border-0 shadow-none">
+        <div class="dash-table-container position-relative d-inline-block">
+          <p-table
+            class="dash-table"
+            [value]="products"
+            [(selection)]="selectedTodo"
+            dataKey="id"
+          >
+            <ng-template #header>
+              <tr>
+                <th style="width: 4rem"><p-tableHeaderCheckbox /></th>
+                <th class="table-heading">Package Title</th>
+                <th class="table-heading">Status</th>
+                <th class="table-heading">Created by</th>
+                <th class="table-heading" colspan="2">Created on</th>
+              </tr>
+            </ng-template>
+
+            <ng-template #body let-item>
+              <tr>
+                <td class="table-data">
+                  <p-tableCheckbox [value]="item" />
+                </td>
+                <td class="table-data">{{ item.packageTitle }}</td>
+                <td
+                  class="fw-bold"
+                  [ngClass]="{
+                    'text-progress': item.status === 'In Progress',
+                    'text-reject': item.status === 'Rejected',
+                    'text-complete': item.status === 'Completed',
+                    'text-pending': item.status === 'Pending'
+                  }"
+                >
+                  {{ item.status }}
+                </td>
+                <td class="table-data">{{ item.createdBy }}</td>
+                <td class="table-data">{{ item.createdOn }}</td>
+                <td>
+                  <button
+                    class="border-0 bg-white"
+                    matButton
+                    [matMenuTriggerFor]="menu"
+                  >
+                    <i class="bi bi-three-dots"></i>
+                  </button>
+                  <mat-menu #menu="matMenu" class="shadow-none">
+                    <button mat-menu-item>View</button>
+                    <button mat-menu-item>Rename</button>
+                    <button mat-menu-item>Preview</button>
+                    <button mat-menu-item>Make Template</button>
+                    <button mat-menu-item>Share</button>
+                    <button mat-menu-item>Print</button>
+                    <button mat-menu-item>Download</button>
+                    <button mat-menu-item>Delete</button>
+                  </mat-menu>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

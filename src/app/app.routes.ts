@@ -62,6 +62,14 @@ export const routes: Routes = [
   },
 
   {
+    path: 'plans',
+    loadComponent: () =>
+      import('./views/pages/plans-pricing/plans-pricing.component').then(
+        (c) => c.PlansPricingComponent
+      ),
+  },
+
+  {
     path: '**',
     loadComponent: () =>
       import('./views/pages/page404/page404.component').then(

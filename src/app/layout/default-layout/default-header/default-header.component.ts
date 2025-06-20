@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import {
@@ -17,6 +17,7 @@ import {
 } from '@coreui/angular';
 
 import { IconDirective } from '@coreui/icons-angular';
+import { HttpService } from '../../../../services/http/http.service';
 
 @Component({
   selector: 'app-default-header',
@@ -43,4 +44,10 @@ export class DefaultHeaderComponent extends HeaderComponent {
   }
 
   sidebarId = input('sidebar1');
+
+  private _httpService = inject(HttpService);
+
+  logout(): void {
+    this._httpService.logout();
+  }
 }
