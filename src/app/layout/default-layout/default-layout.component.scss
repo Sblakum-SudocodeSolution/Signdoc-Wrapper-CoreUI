@@ -11,6 +11,11 @@
   .ng-scroll-content {
     display: flex;
     min-height: 100%;
+    padding: 1rem;
+  }
+
+  .activated-route {
+    color: var(--text-violate) !important;
   }
 
   //.sidebar-nav {

@@ -33,13 +33,49 @@
   </c-sidebar-header>
 
   <ng-scrollbar pointerEventsMethod="scrollbar" visibility="hover">
-    <c-sidebar-nav [navItems]="navItems" dropdownMode="close" compact />
+    <!-- <c-sidebar-nav [navItems]="navItems" dropdownMode="close" compact /> -->
+    <ul class="mb-0">
+      @for (item of navItems; track $index) { @if (item.title) {
+      <div class="text-[#64748b] font-medium my-2">{{ item.label }}</div>
+      } @if (item.hr) {
+      <hr />
+      }
+
+      <li
+        class="rounded-lg py-[10px] px-3 text-[1.1rem] transition-all cursor-pointer hover:bg-[#f6eeff]"
+      >
+        <a
+          routerLink="{{ item.link }}"
+          routerLinkActive="{{ item.routerLinkActive }}"
+          class="d-block text-black"
+        >
+          <i [class]="item.icon" class="me-2 text-[1.3rem]"></i>
+          {{ item.label }}</a
+        >
+      </li>
+      }
+
+      <!-- <li
+        class="btn-logout mb-4 d-flex align-items-center justify-content-center"
+        (click)="logOut()"
+      >
+        <i class="bi bi-box-arrow-left me-2"></i>
+        Logout
+      </li> -->
+      <li
+        class="rounded-lg text-[1.1rem] py-2 px-3 text-black cursor-pointer mt-2 float-end hover:bg-[#f6eeff]"
+        (click)="signout()"
+      >
+        <i class="bi bi-box-arrow-left text-[1.3rem] me-2"></i>
+        Logout
+      </li>
+    </ul>
   </ng-scrollbar>
   <!-- <button>Logout</button> -->
 </c-sidebar>
 
 <!--main-->
-<div class="wrapper d-flex flex-column min-vh-100">
+<div class="wrapper flex flex-column h-screen">
   <!--app-header-->
   <app-default-header
     [cShadowOnScroll]="'sm'"
@@ -48,7 +84,7 @@
     sidebarId="sidebar1"
   />
   <!--app-body-->
-  <div class="body flex-grow-1 p-4">
+  <div class="body flex-grow-1 h-full overflow-auto p-4">
     <!-- <c-container breakpoint="lg" class="p-4 h-100 w-100"> -->
     <router-outlet />
     <!-- </c-container> -->

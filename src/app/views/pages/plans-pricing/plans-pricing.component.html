@@ -1,165 +1,250 @@
-<div class="pricing-back-arr" (click)="redirectToHome()">
-  <i class="bi bi-chevron-left back-arr"></i>
-</div>
-<div class="container mt-4 mb-5 pricing-container">
-  <div class="pricing-header text-center">
-    <strong class="heading"
-      >Choose the Plan That <span>Fits You Best</span></strong
+<div class="container text-center text-black">
+  <div class="mt-5">
+    <strong class="text-5xl text-bold leading-[60px]"
+      >Choose the Plan That
+      <span class="text-[#9747ff] block">Fits You Best</span></strong
     >
-    <span class="pricing-tag">Choose a plan that’s right for you</span>
+    <span class="text-xl">Choose a plan that’s right for you</span>
+  </div>
 
-    <div class="d-flex justify-content-center align-items-center my-5">
-      <div class="time-label mb-1">Pay Monthly</div>
-      <div class="mx-3">
-        <p-toggleswitch [(ngModel)]="checked" />
-      </div>
-      <div class="time-label mt-2">
-        Pay Yearly
-        <img
-          src="../../../assets/images/pricing_arr_1.png"
-          class="d-block"
-          width="75"
-          height="15"
-          alt="img"
-        />
-      </div>
-      <div class="ms-3 discount-arr-container d-flex align-items-end">
-        <img
-          src="../../../assets/images/pricing_arr_2.png"
-          width="100"
-          height="60"
-          alt=""
-        />
-        <div class="mb-2 discount-pr">save 25%</div>
-      </div>
+  <div class="flex justify-center items-center my-5">
+    <div class="mb-1!">Pay Monthly</div>
+    <div class="mx-3">
+      <label class="inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" />
+        <div
+          class="relative w-11 h-6 bg-gray-200 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600 dark:peer-checked:bg-green-600"
+        ></div>
+      </label>
+    </div>
+    <div>
+      <div class="mt-2!">Pay Yearly</div>
+      <img
+        src="../../../../assets/images/pricing_arr_1.png"
+        class="block"
+        width="75"
+        height="15"
+        alt="img"
+      />
+    </div>
+    <div class="ms-3 flex items-end">
+      <img
+        src="../../../../assets/images/pricing_arr_2.png"
+        width="100"
+        height="60"
+        alt=""
+      />
+      <div class="mb-2 text-[#9747ff] font-semibold">save 25%</div>
     </div>
   </div>
-  <div class="row pricing-cards">
-    <div class="col-lg-3 col-md-6 pricing-card">
-      <div class="card">
-        <span class="title">Starter Plan</span>
-        <p class="card-tag m-0 mt-2">
-          For individuals or freelancers just getting started.
-        </p>
 
-        <strong class="plans-price my-3">$05 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul id="card-icons">
-            <li>
-              <i class="bi bi-check-circle" id="card-icon"></i> 2 Users access
-            </li>
-            <li>
-              <i class="bi bi-check-circle" id="card-icon"></i>
-              Limited Templates
-            </li>
-            <li><i class="bi bi-x-circle" id="card-icon"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle" id="card-icon"></i> API access</li>
-            <li>
-              <i class="bi bi-x-circle" id="card-icon"></i> Mobile App access
-            </li>
-            <li>
-              <i class="bi bi-x-circle" id="card-icon"></i> In-person signatures
-            </li>
-            <li>
-              <i class="bi bi-x-circle" id="card-icon"></i> Set reminders &
-              notifications
-            </li>
-            <li>
-              <i class="bi bi-x-circle" id="card-icon"></i> Document groups
-            </li>
-            <li>
-              <i class="bi bi-x-circle" id="card-icon"></i> Cloud storage
-              integration
-            </li>
-          </ul>
-        </div>
-      </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div
+      class="pricing-card border shadow-md rounded-md px-3 py-[2rem] text-start transition-all ease-in-out duration-300"
+    >
+      <strong class="text-2xl text-bold">Starter Plan</strong>
+      <p class="plan-description mb-0 mt-4! mb-8! text-[#64748b]">
+        For individuals or freelancers just getting started.
+      </p>
+      <strong class="text-5xl"
+        >$05
+        <span class="plan-duration text-[#4b5768] text-base font-light"
+          >/ Month</span
+        ></strong
+      >
+      <button
+        class="text-[#a358ff] border-1 border-[#a358ff] bg-white capitalize! text-bold! w-full p-[10px] rounded-sm! my-8!"
+      >
+        get started now
+      </button>
+      <ul class="mb-0 grid gap-3">
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          2 Users access
+        </li>
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          Limited Templates
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Send in bulk
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          API access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Mobile App access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          In-person signatures
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Set reminders & notifications
+        </li>
+        <li><i class="bi bi-x-circle plan-card-icon"></i> Document groups</li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Cloud storage integration
+        </li>
+      </ul>
     </div>
-
-    <div class="col-lg-3 col-md-6 pricing-card">
-      <div class="card">
-        <span class="title">Pro Plan</span>
-        <p class="card-tag m-0 mt-2">
-          Ideal for small teams or growing businesses.
-        </p>
-
-        <strong class="plans-price my-3">$10 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul>
-            <li><i class="bi bi-check-circle card-icon"></i> 5 User access</li>
-            <li><i class="bi bi-check-circle"></i> 50 Templates</li>
-            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle"></i> API access</li>
-            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
-            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
-            <li>
-              <i class="bi bi-x-circle"></i> Set reminders & notifications
-            </li>
-            <li><i class="bi bi-x-circle"></i> Document groups</li>
-            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li>
-          </ul>
-        </div>
-      </div>
+    <div
+      class="pricing-card border shadow-md rounded-md px-3 py-[2rem] text-start transition-all ease-in-out duration-300"
+    >
+      <strong class="text-2xl text-bold">Pro Plan</strong>
+      <p class="plan-description mb-0 mt-4! mb-8! text-[#64748b]">
+        Ideal for small teams or growing businesses.
+      </p>
+      <strong class="text-5xl"
+        >$10
+        <span class="plan-duration text-[#4b5768] text-base font-light"
+          >/ Month</span
+        ></strong
+      >
+      <button
+        class="text-[#a358ff] border-1 border-[#a358ff] bg-white capitalize! text-bold! w-full p-[10px] rounded-sm! my-8!"
+      >
+        get started now
+      </button>
+      <ul class="mb-0 grid gap-3">
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          2 Users access
+        </li>
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          Limited Templates
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Send in bulk
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          API access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Mobile App access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          In-person signatures
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Set reminders & notifications
+        </li>
+        <li><i class="bi bi-x-circle plan-card-icon"></i> Document groups</li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Cloud storage integration
+        </li>
+      </ul>
     </div>
-
-    <div class="col-lg-3 col-md-6 pricing-card">
-      <div class="card">
-        <span class="title">Business Plan</span>
-        <p class="card-tag m-0 mt-2">
-          Designed for companies needing advanced controls
-        </p>
-
-        <strong class="plans-price my-3">$20 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul>
-            <li><i class="bi bi-check-circle card-icon"></i> 2 Users access</li>
-            <li><i class="bi bi-check-circle"></i> Limited Templates</li>
-            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle"></i> API access</li>
-            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
-            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
-            <li>
-              <i class="bi bi-x-circle"></i> Set reminders & notifications
-            </li>
-            <li><i class="bi bi-x-circle"></i> Document groups</li>
-            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li>
-          </ul>
-        </div>
-      </div>
+    <div
+      class="pricing-card border shadow-md rounded-md px-3 py-[2rem] text-start transition-all ease-in-out duration-300"
+    >
+      <strong class="text-2xl text-bold">Business Plan</strong>
+      <p class="plan-description mb-0 mt-4! mb-8! text-[#64748b]">
+        Designed for companies needing advanced controls.
+      </p>
+      <strong class="text-5xl"
+        >$20
+        <span class="plan-duration text-[#4b5768] text-base font-light"
+          >/ Month</span
+        ></strong
+      >
+      <button
+        class="text-[#a358ff] border-1 border-[#a358ff] bg-white capitalize! text-bold! w-full p-[10px] rounded-sm! my-8!"
+      >
+        get started now
+      </button>
+      <ul class="mb-0 grid gap-3">
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          2 Users access
+        </li>
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          Limited Templates
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Send in bulk
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          API access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Mobile App access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          In-person signatures
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Set reminders & notifications
+        </li>
+        <li><i class="bi bi-x-circle plan-card-icon"></i> Document groups</li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Cloud storage integration
+        </li>
+      </ul>
     </div>
-
-    <div class="col-lg-3 col-md-6 pricing-card">
-      <div class="card">
-        <span class="title">Enterprise Plan</span>
-        <p class="card-tag m-0 mt-2">
-          Tailored solutions for large organizations.
-        </p>
-
-        <strong class="plans-price my-3">$50 <span>/ Month</span></strong>
-        <button class="btn-buy-plan">Get Started Now</button>
-
-        <div class="plan-description">
-          <ul>
-            <li><i class="bi bi-check-circle"></i> 2 Users access</li>
-            <li><i class="bi bi-check-circle"></i> Limited Templates</li>
-            <li><i class="bi bi-x-circle"></i> Send in bulk</li>
-            <li><i class="bi bi-x-circle"></i> API access</li>
-            <li><i class="bi bi-x-circle"></i> Mobile App access</li>
-            <li><i class="bi bi-x-circle"></i> In-person signatures</li>
-            <li>
-              <i class="bi bi-x-circle"></i> Set reminders & notifications
-            </li>
-            <!-- <li><i class="bi bi-x-circle"></i> Document groups</li>
-            <li><i class="bi bi-x-circle"></i> Cloud storage integration</li> -->
-          </ul>
-        </div>
-      </div>
+    <div
+      class="pricing-card border shadow-md rounded-md px-3 py-[2rem] text-start transition-all ease-in-out duration-300"
+    >
+      <strong class="text-2xl text-bold">Enterprise Plan</strong>
+      <p class="plan-description mb-0 mt-4! mb-8! text-[#64748b]">
+        Tailored solutions for large organizations.
+      </p>
+      <strong class="text-5xl"
+        >$50
+        <span class="plan-duration text-[#4b5768] text-base font-light"
+          >/ Month</span
+        ></strong
+      >
+      <button
+        class="text-[#a358ff] border-1 border-[#a358ff] bg-white capitalize! text-bold! w-full p-[10px] rounded-sm! my-8!"
+      >
+        get started now
+      </button>
+      <ul class="mb-0 grid gap-3">
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          2 Users access
+        </li>
+        <li>
+          <i class="bi bi-check-circle plan-card-icon"></i>
+          Limited Templates
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Send in bulk
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          API access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          Mobile App access
+        </li>
+        <li>
+          <i class="bi bi-x-circle plan-card-icon"></i>
+          In-person signatures
+        </li>
+      </ul>
     </div>
   </div>
 </div>

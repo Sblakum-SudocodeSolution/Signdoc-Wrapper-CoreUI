@@ -64,7 +64,7 @@ export class AddRecipientComponent {
   }
 
   backToDocument(): void {
-    this._httpService.navigateByUrl('/documents/add-documents');
+    this._httpService.navigateByUrl('/document/add-document');
   }
 
   recipientSubmit(): void {

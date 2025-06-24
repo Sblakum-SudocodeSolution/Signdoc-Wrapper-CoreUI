@@ -13,11 +13,11 @@ import { HttpService } from '../../../../services/http/http.service';
 export class AddDocumentComponent {
   private _httpService = inject(HttpService);
 
-  redirectRecipientsRoute(): void {
+  navigateRecipient(): void {
     this._httpService.navigateByUrl('/document/add-recipient');
   }
 
   showDropdownMenu(): void {
-    document.getElementById('fileUploadMenu')?.classList.toggle('show');
+    document.getElementById('docUploadMenu')?.classList.toggle('show');
   }
 }

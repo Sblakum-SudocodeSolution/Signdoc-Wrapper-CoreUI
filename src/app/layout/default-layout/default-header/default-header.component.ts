@@ -21,6 +21,7 @@ import { HttpService } from '../../../../services/http/http.service';
 @Component({
   selector: 'app-default-header',
   templateUrl: './default-header.component.html',
+  styleUrls: ['./default-header.component.scss'],
   imports: [
     ContainerComponent,
     HeaderTogglerDirective,

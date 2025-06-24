@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { NgScrollbar } from 'ngx-scrollbar';
 // import { IconDirective } from '@coreui/icons-angular';
 import {
-  ContainerComponent,
   ShadowOnScrollDirective,
   SidebarBrandComponent,
   SidebarComponent,
   SidebarHeaderComponent,
   SidebarNavComponent,
+  // ContainerComponent,
   // SidebarFooterComponent,
   // SidebarToggleDirective,
   // SidebarTogglerDirective,
@@ -16,6 +16,7 @@ import {
 
 import { DefaultHeaderComponent } from './';
 import { navItems } from './_nav';
+import { HttpService } from '../../../services/http/http.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,7 +26,7 @@ import { navItems } from './_nav';
     SidebarComponent,
     SidebarHeaderComponent,
     SidebarBrandComponent,
-    SidebarNavComponent,
+    // SidebarNavComponent,
     // SidebarFooterComponent,
     // SidebarToggleDirective,
     // SidebarTogglerDirective,
@@ -37,8 +38,14 @@ import { navItems } from './_nav';
     RouterOutlet,
     RouterLink,
     ShadowOnScrollDirective,
+    RouterLinkActive,
   ],
 })
 export class DefaultLayoutComponent {
   public navItems = [...navItems];
+  private _httpService = inject(HttpService);
+
+  signout(): void {
+    this._httpService.logout();
+  }
 }

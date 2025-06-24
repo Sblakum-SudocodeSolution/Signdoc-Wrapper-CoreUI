@@ -1,74 +1,82 @@
-:host {
-  .legend {
-    small {
-      font-size: x-small;
-    }
-  }
+// .dashboard-container {
+//   .text-progress {
+//     color: #3b82f6;
+//   }
+//   .text-complete {
+//     color: #119c2b;
+//   }
+//   .text-reject {
+//     color: #dd1818;
+//   }
+//   .text-pending {
+//     color: #8b5cf6;
+//   }
+
+//   .dashboard-title {
+//     font-size: 1.5rem;
+//   }
+
+//   .dashboard-card {
+//     border: 1px solid #e4e4e7;
+//     border-radius: 13px;
+//     transition: all 0.4s;
+
+//     strong {
+//       font-size: 1.75rem;
+//       font-weight: 700;
+//     }
+
+//     span {
+//       color: #71717a;
+//     }
+
+//     i {
+//       font-size: 26px;
+//       transition: all 0.4s;
+//     }
+
+//     &:hover {
+//       border-color: var(--bg-violate);
+//     }
+//   }
+
+//   .dashboard-card:hover i {
+//     color: var(--bg-violate);
+//   }
+
+//   .dash-table-container {
+//     .table-heading {
+//       color: #84919a;
+//     }
+
+//     .table-data {
+//       color: #252c32;
+//     }
+
+//     .filter-box {
+//       select {
+//         outline: none;
+
+//         &:focus-visible {
+//           outline: none !important;
+//         }
+//       }
+//     }
+//   }
+// }
+
+input[type="text"]:focus-visible {
+  border: 1px solid var(--bg-violate) !important;
 }
 
-.dashboard-container {
-  .text-progress {
-    color: #3b82f6;
-  }
-  .text-complete {
-    color: #119c2b;
-  }
-  .text-reject {
-    color: #dd1818;
-  }
-  .text-pending {
-    color: #8b5cf6;
-  }
+.text-light-grey {
+  color: #71717a;
+}
 
-  .dashboard-title {
-    font-size: 1.5rem;
-  }
+.border-light-grey {
+  border-color: #e4e4e7;
+}
 
-  .dashboard-card {
-    border: 1px solid #e4e4e7;
-    border-radius: 13px;
-    transition: all 0.4s;
-
-    strong {
-      font-size: 1.75rem;
-      font-weight: 700;
-    }
-
-    span {
-      color: #71717a;
-    }
-
-    i {
-      font-size: 26px;
-      transition: all 0.4s;
-    }
-
-    &:hover {
-      border-color: var(--bg-violate);
-    }
-  }
-
-  .dashboard-card:hover i {
-    color: var(--bg-violate);
-  }
-
-  .dash-table-container {
-    .table-heading {
-      color: #84919a;
-    }
-
-    .table-data {
-      color: #252c32;
-    }
-
-    .filter-box {
-      select {
-        outline: none;
-
-        &:focus-visible {
-          outline: none !important;
-        }
-      }
-    }
-  }
+.border-violate {
+  border-color: #a358ff;
 }

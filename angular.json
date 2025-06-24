@@ -40,7 +40,12 @@
             "allowedCommonJsDependencies": [],
             "stylePreprocessorOptions": {
               "sass": {
-                "silenceDeprecations": []
+                "silenceDeprecations": [
+                  "color-functions",
+                  "global-builtin",
+                  "import",
+                  "mixed-decls"
+                ]
               }
             }
           },

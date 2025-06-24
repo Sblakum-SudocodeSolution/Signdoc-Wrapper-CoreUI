@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { ContainerComponent } from '@coreui/angular';
 
 @Component({
   selector: 'app-create-contact',
-  imports: [ContainerComponent],
+  imports: [],
   templateUrl: './create-contact.component.html',
   styleUrl: './create-contact.component.scss',
 })

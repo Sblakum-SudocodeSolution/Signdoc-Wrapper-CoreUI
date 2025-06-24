@@ -1,9 +1,4 @@
-<!-- <c-card>
-  <c-card-header>Dashboard</c-card-header>
-  <c-card-body><h2>Dashboard</h2></c-card-body>
-</c-card> -->
-
-<div class="dashboard-container my-4">
+<!-- <div class="dashboard-container my-4">
   <div
     class="dashboard-header d-flex align-items-center justify-content-between"
   >
@@ -146,5 +141,142 @@
         </div>
       </div>
     </div>
+  </div>
+</div> -->
+
+<div class="dashboard-container">
+  <div class="flex items-center justify-between my-4">
+    <span class="font-bold text-2xl capitalize">my Dashboard</span>
+    <button class="btn-package" (click)="createPackage()">
+      <i class="bi bi-plus"></i> Create Packages
+    </button>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div
+      class="border-1 rounded-lg border-light-grey hover:border-[#a358ff]! transition p-3"
+    >
+      <span class="text-2xl font-bold">175</span>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-light-grey">All Documents</span>
+        <i class="bi bi-archive text-3xl"></i>
+      </div>
+    </div>
+    <div
+      class="border-1 rounded-lg border-light-grey hover:border-[#a358ff]! transition p-3"
+    >
+      <span class="text-2xl font-bold">105</span>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-light-grey">Completed Documents</span>
+        <i class="bi bi-file-earmark-check text-3xl"></i>
+      </div>
+    </div>
+    <div
+      class="border-1 rounded-lg border-light-grey hover:border-[#a358ff]! transition p-3"
+    >
+      <span class="text-2xl font-bold">60</span>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-light-grey">Pending Documents</span>
+        <i class="bi bi-file-earmark-text text-3xl"></i>
+      </div>
+    </div>
+    <div
+      class="border-1 rounded-lg border-light-grey hover:border-[#a358ff]! transition p-3"
+    >
+      <span class="text-2xl font-bold">10</span>
+      <div class="flex items-center justify-between mt-2">
+        <span class="text-light-grey">Rejected Documents</span>
+        <i class="bi bi-file-earmark-excel text-3xl"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-5 flex justify-between gap-4">
+    <form class="flex items-center w-full">
+      <div class="relative w-full">
+        <div
+          class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+        >
+          <i class="bi bi-search"></i>
+        </div>
+        <input
+          type="text"
+          class="bg-white border border-gray-300 outline-none placeholder-gray-400 text-sm rounded-md block w-full ps-10 p-2.5"
+          placeholder="Type to search"
+        />
+      </div>
+    </form>
+    <div class="border border-gray-300 flex rounded-md overflow-hidden">
+      <form class="max-w-sm mx-auto">
+        <select
+          id="countries"
+          class="bg-white text-gray-900 border-r outline-none border-gray-300 text-sm block w-full p-2.5"
+        >
+          <option value="" selected disabled>Status</option>
+          <option value="name">By name</option>
+          <option value="status">By status</option>
+          <option value="date">By date</option>
+        </select>
+      </form>
+
+      <button class="border-0 px-3">
+        <i class="bi bi-sort-down text-[1.5rem]"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="relative overflow-x-auto border">
+    <table class="w-full text-sm text-left rtl:text-right">
+      <thead class="text-[#84919a] uppercase">
+        <tr>
+          <th scope="col" class="p-4">
+            <div class="flex items-center">
+              <input
+                id="checkbox-all-search"
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2"
+              />
+              <label for="checkbox-all-search" class="sr-only">checkbox</label>
+            </div>
+          </th>
+          <th scope="col" class="px-6 py-3">Package Title</th>
+          <th scope="col" class="px-6 py-3">Status</th>
+          <th scope="col" class="px-6 py-3">Created by</th>
+          <th scope="col" class="px-6 py-3">Created on</th>
+          <th scope="col" class="px-6 py-3">test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+        >
+          <td class="w-4 p-4">
+            <div class="flex items-center">
+              <input
+                id="checkbox-table-search-1"
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2"
+              />
+              <label for="checkbox-table-search-1" class="sr-only"
+                >checkbox</label
+              >
+            </div>
+          </td>
+          <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+            Apple MacBook Pro 17"
+          </th>
+          <td class="px-6 py-4">Silver</td>
+          <td class="px-6 py-4">Laptop</td>
+          <td class="px-6 py-4">Yes</td>
+          <td class="flex items-center px-6 py-4">
+            <a
+              href="#"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >Edit</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -1,7 +1,5 @@
 import { Component, inject } from '@angular/core';
-// import { ContainerComponent } from '@coreui/angular';
 import { HttpService } from '../../../../services/http/http.service';
-
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
@@ -14,20 +12,20 @@ import { CommonModule } from '@angular/common';
 export class DocumentDashboardComponent {
   visible: boolean = false;
   isPopupShow: boolean = false;
-  isUrlShow: boolean = false;
+  isUrlPopup: boolean = false;
 
   private _httpService = inject(HttpService);
 
-  redirectDocumentRoute(): void {
+  navigateAddDocument(): void {
     this._httpService.navigateByUrl('/document/add-document');
   }
 
-  toggleMenuPopup(): void {
+  toggleDocumentPopup(): void {
     this.isPopupShow = !this.isPopupShow;
   }
 
   toggleUrlPopup(): void {
     this.isPopupShow = false;
-    this.isUrlShow = !this.isUrlShow;
+    this.isUrlPopup = !this.isUrlPopup;
   }
 }
