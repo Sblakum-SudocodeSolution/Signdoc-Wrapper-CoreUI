@@ -5,22 +5,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import {
-  ContainerComponent,
-  RowComponent,
-  ColComponent,
-} from '@coreui/angular';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss', '../pages.styles.scss'],
-  imports: [
-    ContainerComponent,
-    RowComponent,
-    ColComponent,
-    ReactiveFormsModule,
-  ],
+  styleUrls: ['./register.component.scss'],
+  imports: [ReactiveFormsModule],
 })
 export class RegisterComponent {
   signupForm!: FormGroup;

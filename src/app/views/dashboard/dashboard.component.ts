@@ -22,9 +22,9 @@ interface todos {
   imports: [
     TableModule,
     CommonModule,
-    InputIcon,
-    IconField,
-    InputTextModule,
+    // InputIcon,
+    // IconField,
+    // InputTextModule,
     FormsModule,
     MatButtonModule,
     MatMenuModule,

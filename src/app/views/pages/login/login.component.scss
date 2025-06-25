@@ -1,21 +1,13 @@
-.box-1 {
+.info-container {
   background-image: url("../../../../assets/images/login_bg_1.png");
 }
 
-.box-2 {
+.form-container {
   background-image: url("../../../../assets/images/login_bg_2.png");
+}
 
-  .form-box {
-    .btn-google {
-      margin: 2rem 0;
-    }
-
-    .create-acc-link {
-      color: var(--text-violate);
-
-      &:hover {
-        color: var(--bg-violate);
-      }
-    }
+@media (min-width: 1199px) {
+  .login-box {
+    padding: 3rem !important;
   }
 }

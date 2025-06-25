@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { ToggleSwitch } from 'primeng/toggleswitch';
 import { FormsModule } from '@angular/forms';
 import { HttpService } from '../../../../services/http/http.service';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-plans-pricing',
-  imports: [FormsModule, ToggleSwitch],
+  imports: [FormsModule,RouterLink],
   templateUrl: './plans-pricing.component.html',
   styleUrl: './plans-pricing.component.scss',
 })

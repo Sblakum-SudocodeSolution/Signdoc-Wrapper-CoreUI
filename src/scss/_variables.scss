@@ -12,22 +12,22 @@
   --bg-hover: #f6eeff;
 }
 
-$breakpoints: (
-  "xs": "(max-width : 600px)",
-  "sm": "(min-width: 600px) and (max-width: 767px)",
-  "md": "(min-width: 768px) and (max-width: 991px)",
-  "lg": "(min-width: 992px) and (max-width: 1199px)",
-  "xl": "(min-width : 1200px) and (max-width: 1920px)",
-  "xxl": "(min-width: 1921px)",
-);
+// $breakpoints: (
+//   "xs": "(max-width : 600px)",
+//   "sm": "(min-width: 600px) and (max-width: 767px)",
+//   "md": "(min-width: 768px) and (max-width: 991px)",
+//   "lg": "(min-width: 992px) and (max-width: 1199px)",
+//   "xl": "(min-width : 1200px) and (max-width: 1920px)",
+//   "xxl": "(min-width: 1921px)",
+// );
 
-@mixin breakpoint($user-value) {
-  $my-map: map.get($breakpoints, $user-value);
-  @if $my-map {
-    @media (#{$my-map}) {
-      @content;
-    }
-  } @else {
-    @error "Oops, seems like the breakpoint #{$user-value} isn't define yet";
-  }
-}
+// @mixin breakpoint($user-value) {
+//   $my-map: map.get($breakpoints, $user-value);
+//   @if $my-map {
+//     @media (#{$my-map}) {
+//       @content;
+//     }
+//   } @else {
+//     @error "Oops, seems like the breakpoint #{$user-value} isn't define yet";
+//   }
+// }

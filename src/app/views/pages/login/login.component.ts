@@ -6,25 +6,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import {
-  ContainerComponent,
-  RowComponent,
-  ColComponent,
-} from '@coreui/angular';
 import { HttpService } from '../../../../services/http/http.service';
 import { Strings } from '../../../../enum/strings.enum';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss', '../pages.styles.scss'],
-  imports: [
-    ContainerComponent,
-    RowComponent,
-    ColComponent,
-    ReactiveFormsModule,
-    RouterLink,
-  ],
+  styleUrls: ['./login.component.scss'],
+  imports: [ReactiveFormsModule, RouterLink],
 })
 export class LoginComponent {
   loginForm!: FormGroup;

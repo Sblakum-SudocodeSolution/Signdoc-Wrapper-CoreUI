@@ -1,17 +1,13 @@
-.box-1 {
+.info-container {
   background-image: url("../../../../assets/images/signup_bg_1.png");
 }
 
-.box-2 {
+.form-container {
   background-image: url("../../../../assets/images/signup_bg_2.png");
+}
 
-  .form-box {
-    .form-description {
-      margin-bottom: 2rem !important;
-    }
-
-    .form-check-span {
-      color: var(--text-violate);
-    }
+@media (min-width: 1199px) {
+  .register-box {
+    padding: 3rem !important;
   }
 }
