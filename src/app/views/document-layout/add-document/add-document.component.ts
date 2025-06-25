@@ -1,22 +1,16 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { StepperModule } from 'primeng/stepper';
-import { HttpService } from '../../../../services/http/http.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-document',
-  imports: [MatButtonModule, MatMenuModule, StepperModule],
+  imports: [MatButtonModule, MatMenuModule, StepperModule, RouterLink],
   templateUrl: './add-document.component.html',
   styleUrl: './add-document.component.scss',
 })
 export class AddDocumentComponent {
-  private _httpService = inject(HttpService);
-
-  navigateRecipient(): void {
-    this._httpService.navigateByUrl('/document/add-recipient');
-  }
-
   showDropdownMenu(): void {
     document.getElementById('docUploadMenu')?.classList.toggle('show');
   }

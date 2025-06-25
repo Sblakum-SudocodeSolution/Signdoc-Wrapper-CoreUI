@@ -9,6 +9,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { HttpService } from '../../../../services/http/http.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-recipient',
@@ -17,6 +18,7 @@ import { HttpService } from '../../../../services/http/http.service';
     ReactiveFormsModule,
     ButtonModule,
     InputTextModule,
+    RouterLink,
   ],
   templateUrl: './add-recipient.component.html',
   styleUrl: './add-recipient.component.scss',
@@ -61,10 +63,6 @@ export class AddRecipientComponent {
 
   toggleStepActive(): void {
     this.isStepActive = !this.isStepActive;
-  }
-
-  backToDocument(): void {
-    this._httpService.navigateByUrl('/document/add-document');
   }
 
   recipientSubmit(): void {
