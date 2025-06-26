@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { HttpService } from '../../../../services/http/http.service';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
+
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-document-dashboard',
-  imports: [CardModule, ButtonModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './document-dashboard.component.html',
   styleUrl: './document-dashboard.component.scss',
 })

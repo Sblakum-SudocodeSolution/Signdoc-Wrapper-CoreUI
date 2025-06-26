@@ -5,21 +5,18 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AccordionModule } from 'primeng/accordion';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
 import { HttpService } from '../../../../services/http/http.service';
 import { RouterLink } from '@angular/router';
+// import {
+//   AccordionButtonDirective,
+//   AccordionComponent,
+//   AccordionItemComponent,
+//   TemplateIdDirective,
+// } from '@coreui/angular';
 
 @Component({
   selector: 'app-add-recipient',
-  imports: [
-    AccordionModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    InputTextModule,
-    RouterLink,
-  ],
+  imports: [ReactiveFormsModule],
   templateUrl: './add-recipient.component.html',
   styleUrl: './add-recipient.component.scss',
 })

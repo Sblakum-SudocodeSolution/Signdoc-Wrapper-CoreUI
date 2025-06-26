@@ -1,6 +1,4 @@
-<div
-  class="bg-light dark:bg-transparent min-vh-100 flex flex-row items-center"
->
+<div class="bg-light dark:bg-transparent min-vh-100 flex flex-row items-center">
   <c-container>
     <c-row class="justify-center">
       <c-col md="6">
@@ -12,13 +10,12 @@
           </p>
         </div>
         <div class="flex justify-center">
-          <button
-            class="bg-[#a358ff] py-2 px-3 font-bold rounded-lg! transition-all hover:bg-[#9747ff]"
+          <a
+            routerLink="/dashboard"
+            class="text-[#9747ff]! border border-[#9747ff]! rounded-lg text-lg text-bold py-2 px-3 transition-all hover:bg-[#9747ff] hover:text-white!"
           >
-            <a routerLink="/dashboard" class="text-white">
-              <i class="bi bi-house-door me-1 text-[1.1rem]"></i> Home
-            </a>
-          </button>
+            <i class="bi bi-house-door me-1 text-lg"></i> Home
+          </a>
         </div>
       </c-col>
     </c-row>

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-import { StepperModule } from 'primeng/stepper';
+
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-document',
-  imports: [MatButtonModule, MatMenuModule, StepperModule, RouterLink],
+  imports: [MatButtonModule, MatMenuModule, RouterLink],
   templateUrl: './add-document.component.html',
   styleUrl: './add-document.component.scss',
 })
