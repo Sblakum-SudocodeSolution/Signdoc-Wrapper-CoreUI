@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, viewChild } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -13,10 +13,26 @@ import { RouterLink } from '@angular/router';
 //   AccordionItemComponent,
 //   TemplateIdDirective,
 // } from '@coreui/angular';
+import { MatButtonModule } from '@angular/material/button';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-add-recipient',
-  imports: [ReactiveFormsModule],
+  imports: [
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatAccordion,
+  ],
   templateUrl: './add-recipient.component.html',
   styleUrl: './add-recipient.component.scss',
 })
@@ -25,6 +41,7 @@ export class AddRecipientComponent {
   private _formBuilder = inject(FormBuilder);
   isStepActive: boolean = false;
   private _httpService = inject(HttpService);
+  accordion = viewChild.required(MatAccordion);
 
   constructor() {
     this.initFormGroup();

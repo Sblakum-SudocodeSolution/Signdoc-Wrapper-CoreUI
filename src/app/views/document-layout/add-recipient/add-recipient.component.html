@@ -1,61 +1,196 @@
-<!-- <div class="add-recipient-container bg-cover bg-no-repeat bg-center min-h-full">
-  <div class="border-1 border-[#a7a7a7] rounded-lg p-3">
-    <c-accordion>
-      <c-accordion-item #item0="cAccordionItem" [visible]="false">
-        <ng-template cTemplateId="accordionHeaderTemplate">
-          <button
-            (click)="item0.toggleItem()"
-            [collapsed]="!item0.visible"
-            cAccordionButton
-          >
-            Add recipient
-          </button>
-        </ng-template>
-        <ng-template cTemplateId="accordionBodyTemplate">
-          <div class="accordion-body">
-            <h2>test</h2>
-          </div>
-        </ng-template>
-      </c-accordion-item>
-      <c-accordion-item #item1="cAccordionItem" [visible]="true">
-        <ng-template cTemplateId="accordionHeaderTemplate">
-          <button
-            (click)="item1.toggleItem()"
-            [collapsed]="!item1.visible"
-            cAccordionButton
-          >
-            Package setting
-          </button>
-        </ng-template>
-        <ng-template cTemplateId="accordionBodyTemplate">
-          <div class="accordion-body">
-            <h2 class="text-black!">test</h2>
-          </div>
-        </ng-template>
-      </c-accordion-item>
-      <c-accordion-item #item2="cAccordionItem" [visible]="false">
-        <ng-template cTemplateId="accordionHeaderTemplate">
-          <button
-            (click)="item2.toggleItem()"
-            [collapsed]="!item2.visible"
-            cAccordionButton
-          >
-            Email Notification setting
-          </button>
-        </ng-template>
-        <ng-template cTemplateId="accordionBodyTemplate">
-          <div class="accordion-body">
-            <h2>test</h2>
-          </div>
-        </ng-template>
-      </c-accordion-item>
-    </c-accordion>
-    <div class="flex justify-between">
-      <a routerLink="/document/add-document" class="btn btn-outline-secondary"
-        ><i class="bi bi-chevron-left"></i>Back</a
-      >
-      <button class="btn-package">Create</button>
-    </div>
-  </div>
-</div> -->
+<div
+  class="add-recipient-container bg-cover bg-no-repeat bg-center min-h-full p-3"
+>
+  <div class="bg-white p-3 border rounded-lg">
+    @let form = recipientForm()!;
 
+    <form
+      class="recipient-form"
+      [formGroup]="form"
+      (ngSubmit)="recipientSubmit()"
+      autocomplete="off"
+    >
+      <div class="flex justify-evenly mt-4 mb-5">
+        <div>
+          <div
+            class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
+          >
+            <div class="bg-[#cbcbcc] rounded-full h-[1rem] w-[1rem]"></div>
+          </div>
+          <span class="text-sm text-[#cbcbcc] font-semibold"
+            >Add Recipient</span
+          >
+        </div>
+        <div>
+          <div
+            class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
+          >
+            <div class="bg-[#cbcbcc] rounded-full h-[1rem] w-[1rem]"></div>
+          </div>
+          <span class="text-sm text-[#cbcbcc] font-semibold"
+            >Add package details</span
+          >
+        </div>
+        <div>
+          <div
+            class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
+          >
+            <div class="bg-[#cbcbcc] rounded-full h-[1rem] w-[1rem]"></div>
+          </div>
+          <span class="text-sm text-[#cbcbcc] font-semibold"
+            >Add email details</span
+          >
+        </div>
+      </div>
+
+      <mat-accordion class="example-headers-align rounded-none!" multi>
+        <mat-expansion-panel
+          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title
+              class="font-semibold text-[#737373]! transition-colors hover:text-[#9747ff]! active:text-[#9747ff]!"
+            >
+              Add recipient
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div formGroupName="recipientDetails">
+            <div class="form-group mb-3">
+              <select formControlName="recipientOrder" class="recipient-select">
+                <option value="" disabled selected>Choose to customize</option>
+                <option value="order-1">Complete in custom order</option>
+                <option value="order-2">Complete one by one</option>
+                <option value="order-3">Complete in custom</option>
+                <option value="order-4">Send in bulk</option>
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="recipientName" class="form-label">Name*</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                id="recipientName"
+                class="recipient-form-input"
+                formControlName="recipientName"
+              />
+              <div class="d-block">
+                @let recipientName = form.get('recipientDetails.recipientName');
+                @if (recipientName?.invalid && recipientName?.touched) {
+                <small class="err-msg">Name is required</small>
+                }
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="recipientEmail" class="form-label">Email*</label>
+              <input
+                type="email"
+                placeholder="example@gmail.com"
+                id="recipientEmail"
+                class="recipient-form-input"
+                formControlName="recipientEmail"
+              />
+              <div class="d-block">
+                @let recipientEmail =
+                form.get('recipientDetails.recipientEmail'); @if
+                (recipientEmail?.invalid && recipientEmail?.touched) { @if
+                (recipientEmail?.hasError('pattern')) {
+                <small class="err-msg">Please enter valid email</small>
+                }@else {
+                <small class="err-msg">Email is required</small>
+                } }
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel
+          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="font-semibold text-[#737373]!">
+              Package setting
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div formGroupName="packageDetails">
+            <div class="form-group mb-3">
+              <label for="packageName" class="form-label">Name*</label>
+              <input
+                type="text"
+                placeholder="Package name"
+                id="packageName"
+                class="recipient-form-input"
+                formControlName="packageName"
+              />
+              <div class="d-block">
+                @let packageName = form.get('packageDetails.packageName'); @if
+                (packageName?.invalid && packageName?.touched) {
+                <small class="err-msg">Name is required</small>
+                }
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="packageDescription" class="form-label"
+                >Description</label
+              >
+              <textarea
+                id="packageDescription"
+                formControlName="packageDescription"
+                class="recipient-textarea"
+              ></textarea>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title class="font-semibold text-[#737373]!"
+              >Email Notification setting
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div formGroupName="emailNotificationDetails">
+            <div class="form-group mb-3">
+              <label for="emailSubject" class="form-label"
+                >Email subject*</label
+              >
+              <input
+                type="text"
+                placeholder="Your subject"
+                id="emailSubject"
+                class="recipient-form-input"
+                formControlName="emailSubject"
+              />
+              <div class="d-block">
+                @let emailSubject =
+                form.get('emailNotificationDetails.emailSubject'); @if
+                (emailSubject?.invalid && emailSubject?.touched) {
+                <small class="err-msg">Subject is required</small>
+                }
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="emailSubjectDescription" class="form-label"
+                >Description</label
+              >
+              <textarea
+                formControlName="emailSubjectDescription"
+                id="emailSubjectDescription"
+                class="recipient-textarea"
+              ></textarea>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <div class="flex mt-5 mb-3 justify-between">
+        <a routerLink="/document/add-document" class="btn btn-outline-secondary"
+          ><i class="bi bi-chevron-left"></i>Back</a
+        >
+        <button class="btn-package">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
