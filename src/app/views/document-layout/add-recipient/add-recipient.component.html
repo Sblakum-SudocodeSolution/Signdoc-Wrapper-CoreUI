@@ -1,7 +1,5 @@
-<div
-  class="add-recipient-container bg-cover bg-no-repeat bg-center min-h-full p-3"
->
-  <div class="bg-white p-3 border rounded-lg">
+<div class="min-h-full">
+  <div class="bg-white p-4 border rounded-lg">
     @let form = recipientForm()!;
 
     <form
@@ -11,7 +9,7 @@
       autocomplete="off"
     >
       <div class="flex justify-evenly mt-4 mb-5">
-        <div>
+        <div class="text-center">
           <div
             class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
           >
@@ -21,7 +19,7 @@
             >Add Recipient</span
           >
         </div>
-        <div>
+        <div class="text-center">
           <div
             class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
           >
@@ -31,7 +29,7 @@
             >Add package details</span
           >
         </div>
-        <div>
+        <div class="text-center">
           <div
             class="border border-[#cbcbcc] rounded-full h-[1.5rem] w-[1.5rem] flex justify-center items-center justify-self-center"
           >
@@ -45,9 +43,9 @@
 
       <mat-accordion class="example-headers-align rounded-none!" multi>
         <mat-expansion-panel
-          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+          class="shadow-none! bg-white rounded-none! border-b border-[#cbcbcc] mt-4"
         >
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header class="px-1">
             <mat-panel-title
               class="font-semibold text-[#737373]! transition-colors hover:text-[#9747ff]! active:text-[#9747ff]!"
             >
@@ -71,7 +69,7 @@
                 type="text"
                 placeholder="Your name"
                 id="recipientName"
-                class="recipient-form-input"
+                class="recipient-form-input placeholder-[#667085]"
                 formControlName="recipientName"
               />
               <div class="d-block">
@@ -88,7 +86,7 @@
                 type="email"
                 placeholder="example@gmail.com"
                 id="recipientEmail"
-                class="recipient-form-input"
+                class="recipient-form-input placeholder-[#667085]"
                 formControlName="recipientEmail"
               />
               <div class="d-block">
@@ -105,9 +103,9 @@
           </div>
         </mat-expansion-panel>
         <mat-expansion-panel
-          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+          class="shadow-none! bg-white rounded-none! border-b border-[#cbcbcc] mt-4"
         >
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header class="px-1">
             <mat-panel-title
               class="font-semibold text-[#737373]! transition-colors hover:text-[#9747ff]! active:text-[#9747ff]!"
             >
@@ -122,7 +120,7 @@
                 type="text"
                 placeholder="Package name"
                 id="packageName"
-                class="recipient-form-input"
+                class="recipient-form-input placeholder-[#667085]"
                 formControlName="packageName"
               />
               <div class="d-block">
@@ -146,9 +144,9 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel
-          class="shadow-none! rounded-none! border-b border-[#cbcbcc] mt-4"
+          class="shadow-none! bg-white rounded-none! border-b border-[#cbcbcc] mt-4"
         >
-          <mat-expansion-panel-header>
+          <mat-expansion-panel-header class="px-1">
             <mat-panel-title
               class="font-semibold text-[#737373]! transition-colors hover:text-[#9747ff]! active:text-[#9747ff]!"
               >Email Notification setting
@@ -163,7 +161,7 @@
                 type="text"
                 placeholder="Your subject"
                 id="emailSubject"
-                class="recipient-form-input"
+                class="recipient-form-input placeholder-[#667085]"
                 formControlName="emailSubject"
               />
               <div class="d-block">

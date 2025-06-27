@@ -1,7 +1,7 @@
 <!--sidebar-->
 <c-sidebar
   #sidebar1="cSidebar"
-  class="d-print-none sidebar sidebar-fixed border-end"
+  class="d-print-none sidebar bg-[#faf8fc]! sidebar-fixed border-end"
   colorScheme="light"
   id="sidebar1"
   visible
@@ -79,12 +79,12 @@
   <!--app-header-->
   <app-default-header
     [cShadowOnScroll]="'sm'"
-    class="d-print-none header header-sticky p-0 shadow-sm"
+    class="d-print-none header header-sticky p-0 shadow-sm bg-[#faf8fc]!"
     position="sticky"
     sidebarId="sidebar1"
   />
   <!--app-body-->
-  <div class="body flex-grow-1 h-full overflow-auto p-4">
+  <div class="body flex-grow-1 h-full overflow-auto sm:p-3 p-4">
     <!-- <c-container breakpoint="lg" class="p-4 h-100 w-100"> -->
     <router-outlet />
     <!-- </c-container> -->

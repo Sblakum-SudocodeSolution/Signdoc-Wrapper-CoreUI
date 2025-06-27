@@ -87,12 +87,6 @@ body {
   ); // stylelint-disable-line function-disallowed-list
 }
 
-@include color-mode(dark) {
-  body {
-    background-color: var(--cui-dark-bg-subtle);
-  }
-
-  .footer {
-    --cui-footer-bg: var(--cui-body-bg);
-  }
+.mat-expansion-panel-body {
+  padding: 0 !important;
 }

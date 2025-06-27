@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .form-label {
   display: block;
 }
@@ -78,5 +80,13 @@ input[type="checkbox"] {
 
   &:checked {
     background-color: var(--bg-violate) !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .recipient-select,
+  .recipient-textarea,
+  .recipient-form-input {
+    width: 100%;
   }
 }
