@@ -7,14 +7,7 @@ import {
 } from '@angular/forms';
 import { HttpService } from '../../../../services/http/http.service';
 import { RouterLink } from '@angular/router';
-// import {
-//   AccordionButtonDirective,
-//   AccordionComponent,
-//   AccordionItemComponent,
-//   TemplateIdDirective,
-// } from '@coreui/angular';
 import { MatButtonModule } from '@angular/material/button';
-import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -32,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatDatepickerModule,
     MatAccordion,
+    RouterLink,
   ],
   templateUrl: './add-recipient.component.html',
   styleUrl: './add-recipient.component.scss',
@@ -86,7 +80,6 @@ export class AddRecipientComponent {
       return;
     }
 
-    console.log(this.recipientForm()?.value);
     this.recipientForm()?.reset();
     this._httpService.navigateByUrl('/dashboard');
   }

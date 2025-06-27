@@ -22,6 +22,5 @@ export class PlansPricingComponent {
 
   checkIconsColor(): void {
     const icon = document.getElementById('card-icons')?.children;
-    console.log(icon);
   }
 }

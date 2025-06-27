@@ -47,7 +47,6 @@ export class RegisterComponent {
       this.signupForm.markAllAsTouched();
       return;
     }
-    console.log(this.signupForm.value);
     this.signupForm.reset();
   }
 }

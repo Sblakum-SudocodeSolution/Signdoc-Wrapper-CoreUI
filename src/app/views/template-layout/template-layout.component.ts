@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-template-layout',
   imports: [RouterOutlet],
-  templateUrl: './template-layout.component.html',
+  template: '<router-outlet />',
   styleUrl: './template-layout.component.scss',
 })
 export class TemplateLayoutComponent {}
