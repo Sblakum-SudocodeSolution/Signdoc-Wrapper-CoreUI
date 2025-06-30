@@ -15,7 +15,6 @@ import {
   SidebarToggleDirective,
 } from '@coreui/angular';
 
-import { IconDirective } from '@coreui/icons-angular';
 import { HttpService } from '../../../../services/http/http.service';
 
 @Component({
@@ -26,7 +25,6 @@ import { HttpService } from '../../../../services/http/http.service';
     ContainerComponent,
     HeaderTogglerDirective,
     SidebarToggleDirective,
-    IconDirective,
     HeaderNavComponent,
     NgTemplateOutlet,
     DropdownComponent,

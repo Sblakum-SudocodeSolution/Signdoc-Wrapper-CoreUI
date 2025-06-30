@@ -9,7 +9,6 @@ import {
 } from '@angular/router';
 import { delay, map } from 'rxjs/operators';
 import { IconSetService } from '@coreui/icons-angular';
-import { iconSubset } from './icons/icon-subset';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +29,6 @@ export class AppComponent implements OnInit {
   constructor() {
     this.#titleService.setTitle(this.title);
     // iconSet singleton
-    this.#iconSetService.icons = { ...iconSubset };
     // this.#colorModeService.localStorageItemName.set(
     //   'signdoc-wrapper-ui-theme-default'
     // );
