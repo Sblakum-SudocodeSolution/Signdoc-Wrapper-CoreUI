@@ -8,7 +8,6 @@ import {
   RouterOutlet,
 } from '@angular/router';
 import { delay, map } from 'rxjs/operators';
-import { IconSetService } from '@coreui/icons-angular';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +23,6 @@ export class AppComponent implements OnInit {
   readonly #titleService = inject(Title);
 
   // readonly #colorModeService = inject(ColorModeService);
-  readonly #iconSetService = inject(IconSetService);
 
   constructor() {
     this.#titleService.setTitle(this.title);

@@ -1,17 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { NgScrollbar } from 'ngx-scrollbar';
-// import { IconDirective } from '@coreui/icons-angular';
 import {
   ShadowOnScrollDirective,
   SidebarBrandComponent,
   SidebarComponent,
   SidebarHeaderComponent,
-  SidebarNavComponent,
-  // ContainerComponent,
-  // SidebarFooterComponent,
-  // SidebarToggleDirective,
-  // SidebarTogglerDirective,
 } from '@coreui/angular';
 
 import { DefaultHeaderComponent } from './';
@@ -26,13 +20,6 @@ import { HttpService } from '../../../services/http/http.service';
     SidebarComponent,
     SidebarHeaderComponent,
     SidebarBrandComponent,
-    // SidebarNavComponent,
-    // SidebarFooterComponent,
-    // SidebarToggleDirective,
-    // SidebarTogglerDirective,
-    // DefaultFooterComponent,
-    // IconDirective,
-    // ContainerComponent,
     DefaultHeaderComponent,
     NgScrollbar,
     RouterOutlet,
